@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    azure:
+      active-directory:
+        enabled: true
+        profile:
+          tenant-id:
+        credential:
+          client-id:
+          client-secret:
+        user-group:
+          allowed-group-ids: 111-111-111-111-11, 111-111-111-111-12
+        redirect-uri-template: "{baseUrl}/login/oauth2/code/azure"
+
+
+roles:
+  authorization:
+    group-to-authorities:
+           "111-111-111-111-11": ROLE_JAVA
+           "111-111-111-111-12": ROLE_ADMIN
+
